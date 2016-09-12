@@ -39,15 +39,13 @@ public class PriceCombinator {
                 priceProcessing(pOld, pNew);
             }
         }
-        updateOldPrices();
+        updateOldPriceEntries();
 
         return PriceEntry.getPrices(oldPriceEntries);
     }
 
-    /**
-     * Методы выполняет добавление цен в oldPrices
-     */
-    private void updateOldPrices() {
+
+    private void updateOldPriceEntries() {
         for (PriceEntry price : newPriceEntries) {
             if (price.getOption() != PriceEntry.Option.OLD) {
                 oldPriceEntries.add(price);
@@ -230,11 +228,4 @@ public class PriceCombinator {
 
         NONE, NEW_INSIDE_OLD, OLD_INSIDE_NEW, OLD_BEFORE, OLD_AFTER,
     }
-    /**
-     * Для тестирования
-     */
-    protected List<Price> getCreatedPrices() {
-        return generatedPrices;
-    }
-
 }

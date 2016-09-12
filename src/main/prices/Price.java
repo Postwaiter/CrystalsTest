@@ -15,6 +15,8 @@ public class Price {
     private Date end;
     private long value;
 
+    public Price() {}
+
     public Price(long id, String product_code, int number, int depart, Date begin, Date end, long value) {
         this.id = id;
         this.product_code = product_code;
